@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Authon</string>
+    <string name="prompt_email">ایمیل</string>
+    <string name="prompt_password">رمزعبور</string>
+    <string name="action_sign_in">ورود</string>
+    <string name="action_register">ثبت‌نام</string>
+    <string name="welcome">!خوش آمدید</string>
+    <string name="invalid_username">نام کاربری معتبر نیست</string>
+    <string name="invalid_password">رمز عبور باید بیش از ۶ کاراتر باشد</string>
+    <string name="login_failed">ورود ناموفق</string>
+    <string name="prompt_phone">شماره تلفن</string>
+    <string name="prompt_username">نام کاربری</string>
+    <string name="prompt_otp">کد تایید</string>
+    <string name="action_get_code">دریافت کد</string>
+</resources>
