@@ -6,6 +6,11 @@ import ir.apptick.authon.Authon
 class Base : Application() {
     override fun onCreate() {
         super.onCreate()
-        Authon.init("213123", Authon.STRATEGY_PHONE_CODE, Authon.LANGUAGE_FA)
+        Authon.init(
+            applicationContext,
+            "5f526e8eda97121ee0453362",
+            Authon.STRATEGY_USERNAME_PASSWORD,
+            Authon.LANGUAGE_FA
+        )
     }
 }

@@ -1,4 +1,4 @@
-package ir.apptick.authenticationlib.base
+package ir.apptick.authon.base
 
 import android.app.Application
 import android.content.Context

@@ -11,11 +11,21 @@
     <string name="prompt_username">Username</string>
     <string name="prompt_otp">Verification Code</string>
     <string name="prompt_password">Password</string>
-    <string name="action_sign_in">"Sign in "</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_underline"><u>Sign in</u></string>
+    <string name="action_register_underline"><u>Register</u></string>
     <string name="action_register">Register</string>
     <string name="welcome">"Welcome!"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="invalid_username">Username must be >3 characters</string>
+    <string name="invalid_email">Not a valid email</string>
+    <string name="invalid_password">Password must be >6 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="action_get_code">Get Code</string>
+    <string name="action_submit">Submit</string>
+    <string name="code_wrong">Code is wrong</string>
+    <string name="username_password_wrong">Username or Password is wrong</string>
+    <string name="email_password_wrong">Email or Password is wrong</string>
+    <string name="login_first">Already Registered Please Login</string>
+    <string name="register_first">You are not Registered Please Register </string>
+    <string name="error">Error</string>
 </resources>

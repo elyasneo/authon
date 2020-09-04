@@ -3,14 +3,24 @@
     <string name="app_name">Authon</string>
     <string name="prompt_email">ایمیل</string>
     <string name="prompt_password">رمزعبور</string>
+    <string name="action_sign_in_underline"><u>ورود</u></string>
     <string name="action_sign_in">ورود</string>
     <string name="action_register">ثبت‌نام</string>
-    <string name="welcome">!خوش آمدید</string>
-    <string name="invalid_username">نام کاربری معتبر نیست</string>
+    <string name="action_register_underline"><u>ثبت‌نام</u></string>
+    <string name="welcome">خوش آمدید!</string>
+    <string name="invalid_username">نام کاربری باید بیش از ۳ کاراتر باشد</string>
     <string name="invalid_password">رمز عبور باید بیش از ۶ کاراتر باشد</string>
     <string name="login_failed">ورود ناموفق</string>
     <string name="prompt_phone">شماره تلفن</string>
     <string name="prompt_username">نام کاربری</string>
     <string name="prompt_otp">کد تایید</string>
     <string name="action_get_code">دریافت کد</string>
+    <string name="invalid_email">ایمیل معتبر نمی باشد</string>
+    <string name="action_submit">تایید</string>
+    <string name="code_wrong">کد اشتباه است</string>
+    <string name="username_password_wrong">نام کاربری یا رمزعبور اشتباه است</string>
+    <string name="email_password_wrong">ایمیل یا رمز عبور اشتباه است</string>
+    <string name="login_first">قبلا ثبت‌نام کرده اید لطفا وارد شوید</string>
+    <string name="register_first">شما ثبت نام نکرده اید لطفا ثبت‌نام کتید</string>
+    <string name="error">خطا</string>
 </resources>

@@ -1,4 +1,4 @@
-package ir.apptick.authenticationlib.local
+package ir.apptick.authon.local
 
 
 import android.annotation.SuppressLint
@@ -9,38 +9,39 @@ import com.yakivmospan.scytale.Options
 import com.yakivmospan.scytale.Store
 import javax.crypto.SecretKey
 
-class SharedPref(val context: Context) {
+class SharedPref(var context: Context) {
     private val sharedPreferences =
         context.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
 
     companion object {
         const val TAG = "SharedPref"
-        const val SHARED_PREF_NAME = "auth_lib_perf"
-        private const val TOKEN_KEY = "token_key"
+        const val SHARED_PREF_NAME = "authon_perf"
+        private const val ACCESS_TOKEN_KEY = "access_token_key"
+        private const val REFRESH_TOKEN_KEY = "refresh_token_key"
     }
 
     @SuppressLint("ApplySharedPref")
-    fun saveToken(token: String) {
-        val key: SecretKey
+    private fun saveToken(key: String, token: String) {
+        val mKey: SecretKey
         val crypto = Crypto(Options.TRANSFORMATION_SYMMETRIC)
         val store = Store(context)
-        key = store.generateSymmetricKey(TOKEN_KEY, null)
-        val encryptedData = crypto.encrypt(token, key)
+        mKey = store.generateSymmetricKey(key, null)
+        val encryptedData = crypto.encrypt(token, mKey)
         Log.i(
             TAG,
             "loadEncryptionKey:Random Password Generated and Encrypted using Generated KeyStore Key"
         )
 
-        sharedPreferences.edit().putString("token", encryptedData).commit()
+        sharedPreferences.edit().putString(key, encryptedData).commit()
     }
 
-    fun getToken(): String {
+    private fun getToken(key: String): String {
         return try {
             val store = Store(context)
             val crypto = Crypto(Options.TRANSFORMATION_SYMMETRIC)
-            val encryptedData = sharedPreferences.getString("token", "")
-            val key = store.getSymmetricKey(TOKEN_KEY, null)
-            val decryptedData = crypto.decrypt(encryptedData!!, key)
+            val encryptedData = sharedPreferences.getString(key, "")
+            val mKey = store.getSymmetricKey(key, null)
+            val decryptedData = crypto.decrypt(encryptedData!!, mKey)
             Log.i(TAG, "loadEncryptionKey: Token Decrypted")
             if (decryptedData == "") "" else "Bearer $decryptedData"
 
@@ -51,9 +52,25 @@ class SharedPref(val context: Context) {
 
     }
 
+    fun saveAccessToken(token: String) {
+        saveToken(ACCESS_TOKEN_KEY, token)
+    }
+
+    fun saveRefreshToken(token: String) {
+        saveToken(REFRESH_TOKEN_KEY, token)
+    }
+
+    fun getAccessToken(): String {
+        return getToken(ACCESS_TOKEN_KEY)
+    }
+
+    fun getRefreshToken(): String {
+        return getToken(REFRESH_TOKEN_KEY)
+    }
+
 
     fun hasToken(): Boolean {
-        return getToken().isNotEmpty()
+        return getToken(ACCESS_TOKEN_KEY).isNotEmpty() && getToken(REFRESH_TOKEN_KEY).isNotEmpty()
     }
 }
 

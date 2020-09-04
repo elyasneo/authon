@@ -10,6 +10,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        if (Authon.isUserLoggedIn()) {
+            startActivity(Intent(this@MainActivity, HomeActivity::class.java))
+            finish()
+        }
         Authon.start(this, R.id.container, R.drawable.firelogo, object : AuthonCallback {
             override fun success() {
                 startActivity(Intent(this@MainActivity, HomeActivity::class.java))
@@ -20,5 +24,6 @@ class MainActivity : AppCompatActivity() {
 
             }
         })
+
     }
 }

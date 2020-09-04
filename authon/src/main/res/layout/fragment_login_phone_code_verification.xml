@@ -20,6 +20,7 @@
 
     <EditText
         android:id="@+id/code"
+        android:textDirection="ltr"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -30,7 +31,7 @@
         android:gravity="center"
         android:hint="@string/prompt_otp"
         android:inputType="numberDecimal"
-        android:maxLength="11"
+        android:maxLength="5"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +50,7 @@
         android:background="@drawable/btn_background"
         android:enabled="true"
         android:fontFamily="@font/irs"
-        android:text="@string/action_sign_in"
+        android:text="@string/action_submit"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

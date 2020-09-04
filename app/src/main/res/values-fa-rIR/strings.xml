@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">AuthSdk</string>
     <string name="hello_blank_fragment">سلام فرگمنت جدید</string>
+    <string name="logout">خروج</string>
 </resources>
