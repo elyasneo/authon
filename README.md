@@ -1,6 +1,8 @@
 # authon
 
 Add code below to your build.grade(app) file:
+
+```groovy
    compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -9,3 +11,4 @@ Add code below to your build.grade(app) file:
     kotlinOptions {
         jvmTarget = "1.8"
     }
+```
