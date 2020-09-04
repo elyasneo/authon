@@ -8,8 +8,8 @@ class Base : Application() {
         super.onCreate()
         Authon.init(
             applicationContext,
-            "5f526e8eda97121ee0453362",
-            Authon.STRATEGY_USERNAME_PASSWORD,
+            "5f5253813f9d684c2093f9a0",
+            Authon.STRATEGY_PHONE_CODE,
             Authon.LANGUAGE_FA
         )
     }
